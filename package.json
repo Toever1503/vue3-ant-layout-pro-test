@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@ant-design-vue/pro-layout": "^3.2.0-rc.5",
+    "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.11",
     "pinia": "^2.0.17",
     "vue": "^3.2.37",

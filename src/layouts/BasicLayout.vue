@@ -8,7 +8,7 @@
     :breadcrumb="{ routes: breadcrumb }"
     disable-content-margin
     style="min-height: 100vh"
-    iconfont-url="//at.alicdn.com/t/font_2804900_2sp8hxw3ln8.js"
+    iconfont-url="//at.alicdn.com/t/c/font_3630424_fn5rr8v0dur.js"
     v-bind="proConfig"
   >
     <template #menuHeaderRender>
@@ -35,14 +35,12 @@
       </router-link>
     </template>
 
-    <SettingDrawer v-model="proConfig" />
+<!--    <SettingDrawer v-model="proConfig" />-->
 
-    <RouterView v-slot="{ Component, route }">
-<!--      <transition name="slide-left" mode="out-in">-->
-<!--        <component :is="Component" :key="route.path" />-->
-<!--      </transition>-->
-      hello world
-    </RouterView>
+    <div class="p-2">
+      <span class="text-red-500">sss</span>
+      <RouterView  />
+    </div>
 
   </pro-layout>
 </template>
@@ -56,6 +54,7 @@ import {computed, onMounted, reactive, ref, watch} from "vue";
 const router = useRouter();
 const { menuData } = getMenuData(clearMenuItem(router.getRoutes()));
 
+
 const state = reactive<Omit<RouteContextProps, 'menuData'>>({
   collapsed: false, // default collapsed
   openKeys: [], // defualt openKeys
@@ -65,8 +64,8 @@ const loading = ref(false);
 const proConfig = ref({
   layout: 'side',
   navTheme: 'light',
-  fixedHeader: true,
-  fixSiderbar: true,
+  // fixedHeader: true,
+  // fixSiderbar: true,
   splitMenus: true,
 });
 const breadcrumb = computed(() =>
